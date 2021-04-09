@@ -1,0 +1,104 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="contenido">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Proveedor</div>
+
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Proveedor</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<p:growl id="growl" showDetail="true" sticky="true" />
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-5">
+								<div class="form-group">
+									<h:outputLabel value="Número de DNI" for="idNumero"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText class="form-control" id="idNumero"
+											value="#{proveedorMB.proveedorDto.dniProveedor}"
+											maxlength="8" />
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-sm-6 col-md-6 col-lg-7	">
+								<div class="form-group text-right">
+
+									<p:commandButton value="Limpiar"
+										action="#{proveedorMB.limpiar()}"
+										styleClass="btn btn-primary " ajax="false" />
+									<p:commandButton value="Buscar"
+										actionListener="#{proveedorMB.buscar()}"
+										styleClass="btn btn-primary" ajax="false" />
+									<p:commandButton value="Nuevo"
+										action="#{proveedorMB.nuevoProveedor()}"
+										styleClass="btn btn-primary" ajax="false" />
+
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group table-responsive box-table-class">
+
+									<p:dataTable id="lstProveedor" var="proveedor"
+										value="#{proveedorMB.lstProveedor}" rowKey="#{proveedorMB.id}"
+										paginator="true" paginatorPosition="top"
+										rowsPerPageTemplate="10,20,30,40,50" rows="10"
+										styleClass="table table-responsive"
+										emptyMessage="No existen registros" rowIndexVar="item"
+										style="margin-bottom:0">
+
+										<p:column headerText="Item"
+											style="width:40px;text-align:center">
+											<h:outputText value="#{item + 1}" />
+										</p:column>
+										<p:column headerText="Código:">
+											<h:outputText value="#{proveedor.idProveedor}" />
+										</p:column>
+										<p:column headerText="Nombre">
+											<h:outputText value="#{proveedor.nombreProveedor}" />
+										</p:column>
+										<p:column headerText="DNI">
+											<h:outputText value="#{proveedor.dniProveedor}" />
+										</p:column>
+										<p:column headerText="Direccion">
+											<h:outputText value="#{proveedor.direccion}" />
+										</p:column>
+										<p:column headerText="Teléfono">
+											<h:outputText value="#{proveedor.telefono}" />
+										</p:column>
+										
+										
+										<p:column headerText="Accion"
+											style="width:120px;text-align:center" exportable="false">
+										
+											<p:commandButton title="Modificar"
+												icon="ui-icon ui-icon-pencil"
+												action="#{proveedorMB.modificar(proveedor)}" ajax="false"/>
+											<p:commandButton icon="ui-icon ui-icon-trash"
+												actionListener="#{proveedorMB.eliminar(proveedor)}"
+												title="Eliminar" ajax="false"/>
+										</p:column>
+									</p:dataTable>
+								</div>
+
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

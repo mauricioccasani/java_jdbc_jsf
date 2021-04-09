@@ -1,0 +1,64 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+>
+ 
+
+    <ui:define name="contenido">
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">Venta:</div>
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Datos venta</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<p:growl id="growl" showDetail="true" sticky="true"
+							life="3000" />
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Código:" for="idCodigo"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="true"
+											
+											id="idCodigo"   />
+									</div>
+								</div>
+							</div>
+							
+							
+						</div>
+						<div class="row">
+
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									
+									<div class="btn-group">
+										<p:commandButton value="Aceptar" styleClass="btn btn-primary"
+											
+											ajax="false" />
+									</div>
+									<div class="btn-group">
+										<p:commandButton value="Cancelar"
+											action="#{ventaMB.cancelar()}"
+											styleClass="btn btn-primary" ajax="true" />
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+
+</ui:composition>

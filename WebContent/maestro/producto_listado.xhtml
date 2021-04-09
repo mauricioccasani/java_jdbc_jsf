@@ -1,0 +1,118 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="contenido">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Producto</div>
+
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Datos del producto</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<div class="row">
+
+							<div class="col-sm-6 col-md-6 col-lg-5">
+								<div class="form-group">
+									<h:outputLabel value="Nombre Producto" for="idNombre"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText class="form-control" id="idNombre"
+											value="#{productoMB.productoDto.nombre}" maxlength="50" />
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-sm-6 col-md-6 col-lg-7	">
+								<div class="form-group text-right">
+
+									<p:commandButton value="Limpiar"
+										action="#{productoMB.limparProducto()}"
+										styleClass="btn btn-primary " ajax="false" />
+									<p:commandButton value="Buscar"
+										actionListener="#{productoMB.listarProducto()}"
+										styleClass="btn btn-primary" ajax="false" />
+									<p:commandButton value="Nuevo"
+										action="#{productoMB.nuevoProducto()}"
+										styleClass="btn btn-primary" ajax="false" />
+
+								</div>
+							</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group table-responsive box-table-class">
+
+									<p:dataTable id="lstProducto" var="producto"
+										value="#{productoMB.lstProducto}" rowKey="#{productoMB.id}"
+										paginator="true" paginatorPosition="top"
+										rowsPerPageTemplate="10,20,30,40,50" rows="10"
+										styleClass="table table-responsive"
+										emptyMessage="No existen registros" rowIndexVar="item"
+										style="margin-bottom:0">
+
+										<p:column headerText="Item"
+											style="width:40px;text-align:center">
+											<h:outputText value="#{item + 1}" />
+										</p:column>
+										<p:column headerText="Código:">
+											<h:outputText value="#{producto.idProducto}" />
+										</p:column>
+										<p:column headerText="Nombre">
+											<h:outputText value="#{producto.nombre}" />
+										</p:column>
+										<p:column headerText="Cantidad">
+											<h:outputText value="#{producto.cantidad}" />
+										</p:column>
+										<p:column headerText="Precio">
+											<h:outputText value="#{producto.precio}" />
+										</p:column>
+										<p:column headerText="Estado">
+											<h:outputText value="#{producto.estado}" />
+										</p:column>
+										<p:column headerText="Codigo Usua">
+											<h:outputText value="#{producto.idUsuario}" />
+										</p:column>
+										<p:column headerText="Accion"
+											style="width:120px;text-align:center" exportable="false">
+
+											<p:commandButton title="Modificar"
+												icon="ui-icon ui-icon-pencil"
+												action="#{productoMB.modificar(producto)}" ajax="false" />
+											<p:commandButton icon="ui-icon ui-icon-trash"
+												actionListener="#{productoMB.eliminar(producto)}"
+												title="Eliminar" ajax="false" />
+										</p:column>
+									</p:dataTable>
+								</div>
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-right">
+								<p:commandButton value="PDF" title="Exportar PDF"
+									action="#{productoMB.exportPDF()}" styleClass="btn btn-default"
+									ajax="false" />
+								
+								<p:commandButton value="XLS" title="Exportar Excel"
+									action="#{productoMB.exportExcel()}"
+									styleClass="btn btn-default" ajax="false" />
+								 
+							</div>
+						</div>
+
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

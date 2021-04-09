@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>AdminLTE 2 | Starter</title>
+	<meta
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		name="viewport" />
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+	<meta name="generator" content="Bootply" />
+
+
+	<h:outputStylesheet
+		name="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<h:outputStylesheet 
+		name="webjars/font-awesome/4.7.0/css/font-awesome.min-jsf.css" />
+	<h:outputStylesheet
+		name="bower_components/Ionicons/css/ionicons.min.css" />
+	<h:outputStylesheet name="dist/css/AdminLTE.min.css" />
+	<h:outputStylesheet name="dist/css/skins/skin-blue.min.css" />
+	<!-- Google Font -->
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+
+</h:head>
+<h:body class="" style="background-color: #3c8dbc;">
+	<div class="login-box ">
+		<div class="login-logo">
+			<a href="#"><b>INTEGRA</b>RETAIL</a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body img-rounded">
+			<p class="login-box-msg">Iniciciar Sesion</p>
+
+			<h:form>
+				<p:growl id="growl" showDetail="true" sticky="true" life="3000" />
+
+				<div class="form-group ">
+					<h:outputLabel value="Usuario" for="idUsuario"
+						class="col-sm-2 control-label" />
+					<p:inputText styleClass="form-control" id="idUsuario"
+						value="#{loginMB.usuarioDto.usuario}" required="false" />
+					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+				</div>
+				<div class="form-group ">
+					<h:outputLabel value="Clave" for="idClave"
+						class="col-sm-2 control-label" />
+					<p:password styleClass="form-control" id="idClave" required="false" value="#{loginMB.usuarioDto.clave}" />
+					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+				</div>
+				<div class="row">
+
+					<div class="col-xs-4">
+						<p:commandButton value="Login" update="growl"
+							styleClass="btn btn-primary " action="#{loginMB.login()}"
+							ajax="false" />
+					</div>
+				</div>
+			</h:form>
+
+
+		</div>
+		<!-- /.login-box-body -->
+	</div>
+	<!-- /.login-box -->
+
+	<!-- jQuery 3 -->
+	<h:outputScript src="bower_components/jquery/dist/jquery.min.js" />
+	<!-- Bootstrap 3.3.7 -->
+	<h:outputScript
+		src="bower_components/bootstrap/dist/js/bootstrap.min.js" />
+	<!-- iCheck -->
+	<h:outputScript src="plugins/iCheck/icheck.min.js" />
+
+</h:body>
+</html>

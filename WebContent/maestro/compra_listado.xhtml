@@ -1,0 +1,108 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="contenido">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Compras</div>
+
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Compra</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<p:growl id="growl" showDetail="true" sticky="true" />
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-5">
+								<div class="form-group">
+									<h:outputLabel value="Fecha: " for="idFecha"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<p:calendar value="#{compraMB.compraDto.fecha}"
+											 id="idFecha"></p:calendar>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-sm-6 col-md-6 col-lg-7	">
+								<div class="form-group text-right">
+
+									<p:commandButton value="Limpiar"
+										action="#{compraMB.limpiarCompra()}"
+										styleClass="btn btn-primary " ajax="false" />
+									<p:commandButton value="Buscar"
+										actionListener="#{compraMB.buscar()}"
+										styleClass="btn btn-primary" ajax="false" />
+									<p:commandButton value="Nuevo"
+										action="#{compraMB.nuevoCompra()}"
+										styleClass="btn btn-primary" ajax="false">
+									</p:commandButton>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group table-responsive box-table-class">
+
+									<p:dataTable id="lstCompras" var="compras"
+										value="#{compraMB.lstCompras}" rowKey="#{compraMB.id}"
+										paginator="true" paginatorPosition="top"
+										rowsPerPageTemplate="10,20,30,40,50" rows="10"
+										styleClass="table table-responsive"
+										emptyMessage="No existen registros" rowIndexVar="item"
+										style="margin-bottom:0">
+
+										<p:column headerText="Item"
+											style="width:40px;text-align:center">
+											<h:outputText value="#{item + 1}" />
+										</p:column>
+										<p:column headerText="Código: ">
+											<h:outputText value="#{compras.idCompra}" />
+										</p:column>
+										<p:column headerText="Fechas: ">
+											<h:outputText value="#{compras.fecha}" />
+										</p:column>
+										<p:column headerText="Id proveedor: ">
+											<h:outputText value="#{compras.idProveedor}" />
+										</p:column>
+										<p:column headerText="Id producto">
+											<h:outputText value="#{compras.idProducto}" />
+										</p:column>
+										<p:column headerText="Cantidad: ">
+											<h:outputText value="#{compras.cantidad}" />
+										</p:column>
+										<p:column headerText="Valor: ">
+											<h:outputText value="#{compras.valor}" />
+										</p:column>
+										<p:column headerText="Id Usuario: ">
+											<h:outputText value="#{compras.idUsuario}" />
+										</p:column>
+
+
+										<p:column headerText="Accion"
+											style="width:120px;text-align:center" exportable="false">
+
+											<p:commandButton title="Modificar"
+												icon="ui-icon ui-icon-pencil" ajax="false" />
+											<p:commandButton icon="ui-icon ui-icon-trash"
+												title="Eliminar" ajax="false" />
+										</p:column>
+									</p:dataTable>
+								</div>
+
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

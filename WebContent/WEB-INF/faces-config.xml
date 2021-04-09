@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+
+
+
+
+	<navigation-rule>
+
+		<from-view-id>*</from-view-id>
+
+		<!-- Login -->
+
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>login.xhtml</to-view-id>
+		</navigation-case>
+
+
+
+
+		<navigation-case>
+			<from-outcome>panel</from-outcome>
+			<to-view-id>inicio/panel.xhtml</to-view-id>
+		</navigation-case>
+		<!-- usuario -->
+		<navigation-case>
+			<from-outcome>usuario_listado</from-outcome>
+			<to-view-id>maestro/usuario_listado.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>usuario_registro</from-outcome>
+			<to-view-id>maestro/usuario_registro.xhtml</to-view-id>
+		</navigation-case>
+
+		<!--Proveedor -->
+		<navigation-case>
+			<from-outcome>proveedor_listado</from-outcome>
+			<to-view-id>maestro/proveedor_listado.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>proveedor_registro</from-outcome>
+			<to-view-id>maestro/proveedor_registro.xhtml</to-view-id>
+		</navigation-case>
+		
+		<!--Categorias -->
+		<navigation-case>
+			<from-outcome>categoria_listado</from-outcome>
+			<to-view-id>maestro/categoria_listado.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>categoria_registro</from-outcome>
+			<to-view-id>maestro/categoria_registro.xhtml</to-view-id>
+		</navigation-case>
+
+		<!--Proveedor -->
+		<navigation-case>
+			<from-outcome>producto_listado</from-outcome>
+			<to-view-id>maestro/producto_listado.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>producto_registro</from-outcome>
+			<to-view-id>maestro/producto_registro.xhtml</to-view-id>
+		</navigation-case>
+
+		<!--Compras -->
+		<navigation-case>
+			<from-outcome>compra_listado</from-outcome>
+			<to-view-id>maestro/compra_listado.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>compra_registro</from-outcome>
+			<to-view-id>maestro/compra_registro.xhtml</to-view-id>
+		</navigation-case>
+		<!--Ventas -->
+		<navigation-case>
+			<from-outcome>venta_listado</from-outcome>
+			<to-view-id>maestro/venta_listado.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>venta_registro</from-outcome>
+			<to-view-id>maestro/venta_registro.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+</faces-config>

@@ -1,0 +1,57 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="contenido">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Compras</div>
+
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Compra</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<p:growl id="growl" showDetail="true" sticky="true" />
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-5">
+								<div class="form-group">
+									<h:outputLabel value="Fecha: " for="idFecha"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText class="form-control" id="idFecha"
+											
+											maxlength="10" />
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-sm-6 col-md-6 col-lg-7	">
+								<div class="form-group text-right">
+
+									<p:commandButton value="Limpiar"
+										
+										styleClass="btn btn-primary " ajax="false" />
+									<p:commandButton value="Buscar"
+										
+										styleClass="btn btn-primary" ajax="false" />
+									<p:commandButton value="Nuevo" action="#{ventaMB.nuevo()}"
+														styleClass="btn btn-primary" ajax="false">
+									</p:commandButton>
+
+								</div>
+							</div>
+						</div>
+
+
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

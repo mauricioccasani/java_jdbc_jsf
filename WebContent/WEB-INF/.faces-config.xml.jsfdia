@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::login.xhtml" NAME="output"
+    PATH="login.xhtml" TARGET="rules:login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="panel::inicio#panel.xhtml" NAME="output2"
+    PATH="inicio/panel.xhtml" TARGET="rules:inicio#panel.xhtml"
+    TITLE="panel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="usuario_listado::maestro#usuario_listado.xhtml" NAME="output1"
+    PATH="maestro/usuario_listado.xhtml"
+    TARGET="rules:maestro#usuario_listado.xhtml" TITLE="usuario_listado" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="usuario_registro::maestro#usuario_registro.xhtml" NAME="output3"
+    PATH="maestro/usuario_registro.xhtml"
+    TARGET="rules:maestro#usuario_registro.xhtml"
+    TITLE="usuario_registro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="proveedor_listado::maestro#proveedor_listado.xhtml"
+    NAME="output4" PATH="maestro/proveedor_listado.xhtml"
+    TARGET="rules:maestro#proveedor_listado.xhtml"
+    TITLE="proveedor_listado" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="proveedor_registro::maestro#proveedor_registro.xhtml"
+    NAME="output5" PATH="maestro/proveedor_registro.xhtml"
+    TARGET="rules:maestro#proveedor_registro.xhtml"
+    TITLE="proveedor_registro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="categoria_listado::maestro#categoria_listado.xhtml"
+    NAME="output6" PATH="maestro/categoria_listado.xhtml"
+    TARGET="rules:maestro#categoria_listado.xhtml"
+    TITLE="categoria_listado" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="categoria_registro::maestro#categoria_registro.xhtml"
+    NAME="output7" PATH="maestro/categoria_registro.xhtml"
+    TARGET="rules:maestro#categoria_registro.xhtml"
+    TITLE="categoria_registro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="compra_listado::maestro#compra_listado.xhtml" NAME="output8"
+    PATH="maestro/compra_listado.xhtml"
+    TARGET="rules:maestro#compra_listado.xhtml" TITLE="compra_listado" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="compra_registro::maestro#compra_registro.xhtml" NAME="output9"
+    PATH="maestro/compra_registro.xhtml"
+    TARGET="rules:maestro#compra_registro.xhtml" TITLE="compra_registro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="venta_listado::maestro#venta_listado.xhtml"
+    NAME="output10" PATH="maestro/venta_listado.xhtml"
+    TARGET="rules:maestro#venta_listado.xhtml" TITLE="venta_listado" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="venta_registro::maestro#venta_registro.xhtml" NAME="output11"
+    PATH="maestro/venta_registro.xhtml"
+    TARGET="rules:maestro#venta_registro.xhtml" TITLE="venta_registro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:inicio#panel.xhtml" PATH="inicio/panel.xhtml"
+  SHAPE="288,241,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:login.xhtml" PATH="login.xhtml"
+  SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#usuario_listado.xhtml"
+  PATH="maestro/usuario_listado.xhtml" SHAPE="288,241,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#usuario_registro.xhtml"
+  PATH="maestro/usuario_registro.xhtml" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#proveedor_listado.xhtml"
+  PATH="maestro/proveedor_listado.xhtml" SHAPE="304,273,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#producto_listado.xhtml"
+  PATH="maestro/producto_listado.xhtml" SHAPE="304,305,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#proveedor_registro.xhtml"
+  PATH="maestro/proveedor_registro.xhtml" SHAPE="304,305,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#producto_registro.xhtml"
+  PATH="maestro/producto_registro.xhtml" SHAPE="304,369,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#compra_listado.xhtml"
+  PATH="maestro/compra_listado.xhtml" SHAPE="304,401,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#compra_registro.xhtml"
+  PATH="maestro/compra_registro.xhtml" SHAPE="304,433,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#venta_listado.xhtml"
+  PATH="maestro/venta_listado.xhtml" SHAPE="304,497,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#venta_registro.xhtml"
+  PATH="maestro/venta_registro.xhtml" SHAPE="304,945,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#categoria_registro.xhtml"
+  PATH="maestro/categoria_registro.xhtml" SHAPE="304,945,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:maestro#categoria_listado.xhtml"
+  PATH="maestro/categoria_listado.xhtml" SHAPE="304,497,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

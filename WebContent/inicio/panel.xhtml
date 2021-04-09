@@ -1,0 +1,19 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="contenido">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Inicio</div>
+			<div class="panel-body">
+				<h1>Bienvenidos #{loginMB.usuarioDto.nombres}</h1>
+
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

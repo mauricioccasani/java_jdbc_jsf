@@ -1,0 +1,75 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="contenido">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Categorias</div>
+
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Datos del categoria</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-7	">
+								<div class="form-group text-right">
+									<p:commandButton value="Nuevo" styleClass="btn btn-primary"
+										action="#{categoriaMB.nuevo()}" ajax="false" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group table-responsive box-table-class">
+
+									<p:dataTable id="lstCategorias" var="categorias"
+										value="#{categoriaMB.lstCategorias}"
+										rowKey="#{categoriaMB.id}" paginator="true"
+										paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+										rows="10" styleClass="table table-responsive"
+										emptyMessage="No existen registros" rowIndexVar="item"
+										style="margin-bottom:0">
+
+										<p:column headerText="Item"
+											style="width:40px;text-align:center">
+											<h:outputText value="#{item + 1}" />
+										</p:column>
+										<p:column headerText="Código:">
+											<h:outputText value="#{categorias.idCategoria}" />
+										</p:column>
+										
+										<p:column headerText="Nombre">
+											<h:outputText value="#{categorias.nombre}" />
+										</p:column>
+										<p:column headerText="Descripcion">
+											<h:outputText value="#{categorias.descripcion}" />
+										</p:column>
+										<p:column headerText="Descripcion">
+											<h:outputText value="#{categorias.estado}" />
+										</p:column>
+										<p:column headerText="Accion"
+											style="width:120px;text-align:center" exportable="false">
+
+											<p:commandButton title="Modificar"
+												icon="ui-icon ui-icon-pencil" ajax="false" />
+											<p:commandButton icon="ui-icon ui-icon-trash"
+												title="Eliminar" ajax="false" />
+										</p:column>
+									</p:dataTable>
+								</div>
+
+							</div>
+						</div>
+
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

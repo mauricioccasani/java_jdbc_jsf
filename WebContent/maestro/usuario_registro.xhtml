@@ -1,0 +1,146 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+
+    <ui:define name="contenido">
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">Usuario</div>
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Usuario</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<div class="row">
+							<p:growl id="growl" showDetail="true" sticky="true" life="3000" />
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Código:" for="idCodigo"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="true"
+											value="#{usuarioMB.usuarioDto.idUsuario}" id="idCodigo" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Nombre:" for="idNombre"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="false"
+											value="#{usuarioMB.usuarioDto.nombres}" id="idNombre" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Apellidos:" for="idApellidos"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="false"
+											value="#{usuarioMB.usuarioDto.apellidos}" id="idApellidos" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Nro: DNI:" for="idDni"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="false"
+											value="#{usuarioMB.usuarioDto.numeroDocumento}" id="idDni" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Correo:" for="idCorreo"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="false"
+											value="#{usuarioMB.usuarioDto.email}" id="idCorreo" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Usuario:" for="idUsuario"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="false"
+											value="#{usuarioMB.usuarioDto.usuario}" id="idUsuario" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Clave:" for="idClave"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="false"
+											value="#{usuarioMB.usuarioDto.clave}" id="idClave" />
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Código de Rol:" for="idRol"
+										class="col-lg-4 control-label" />
+									<div class="col-sm-10">
+										<h:selectOneMenu id="idRol"
+											value="#{usuarioMB.usuarioDto.idRol}"
+											styleClass="form-control">
+											<f:selectItem itemLabel="--Seleccione--" />
+											<f:selectItems value="#{usuarioMB.lstRol}" var="usuario"
+												itemValue="#{usuario.idRol}" itemLabel="#{usuario.nombre}" />
+
+										</h:selectOneMenu>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row" style="margin-top: 20px">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="col-lg-9 col-md-offset-1 col-sm-9 col-sm-offset-1">
+									<div class="btn-toolbar" role="toolbar">
+
+										<div class="btn-group">
+											<p:commandButton title="Grabar"
+												actionListener="#{usuarioMB.grabar()}"
+												styleClass="btn btn-primary btn-sm" ajax="false" />
+
+										</div>
+										<div class="btn-group">
+											<p:commandButton title="Cancelar"
+												action="#{usuarioMB.cancelar()}"
+												styleClass="btn btn-primary btn-sm" ajax="false" />
+
+										</div>
+										<div class="btn-group">
+											<p:commandButton title="limpiar"
+												action="#{usuarioMB.limpiar()}"
+												styleClass="btn btn-primary btn-sm" ajax="false" />
+										</div>
+										
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+
+</ui:composition>

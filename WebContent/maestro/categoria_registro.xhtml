@@ -1,0 +1,101 @@
+
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+>
+ 
+
+    <ui:define name="contenido">
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">Categorias</div>
+			<div class="panel panel-primary"
+				style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<div class="panel-heading">Datos del categorias</div>
+				<div class="panel-body">
+					<h:form class="form-horizontal">
+						<p:growl id="growl" showDetail="true" sticky="true" life="3000" />
+						<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Código:" for="idCodigo"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText styleClass="form-control" readonly="true"
+											value="#{categoriaMB.categoriaDto.idCategoria}" id="idCodigo" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Nombre:" for="idNombre"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText class="form-control"
+											value="#{categoriaMB.categoriaDto.nombre}" id="idNombre" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="form-group">
+									<h:outputLabel value="Descripcion" for="idDescripcion"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText class="form-control" id="idDescripcion"
+											value="#{categoriaMB.categoriaDto.descripcion}" maxlength="8"
+											required="false" />
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-6 col-lg-4 ">
+								<div class="form-group">
+									<h:outputLabel value="Estado" for="idEstado"
+										class="col-sm-2 control-label" />
+									<div class="col-sm-10">
+										<h:inputText class="form-control" id="idEstado"
+											value="#{categoriaMB.categoriaDto.estado}"
+											maxlength="25" readonly="true" />
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="row" style="margin-top: 20px">
+
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="col-lg-9 col-md-offset-1 col-sm-9 col-sm-offset-1">
+									<div class="btn-toolbar" role="toolbar">
+
+										<div class="btn-group">
+											<p:commandButton value="Aceptar" styleClass="btn btn-primary"
+												 actionListener="#{categoriaMB.grabar()}" ajax="false" />
+										</div>
+										<div class="btn-group">
+											<p:commandButton value="Cancelar"
+												action="#{categoriaMB.cancelar()}"
+												styleClass="btn btn-primary" ajax="true" />
+
+										</div>
+										<div class="btn-group">
+											<p:commandButton value="Limpiar"
+												action="#{categoriaMB.limpiar()}"
+												styleClass="btn btn-danger" ajax="false" />
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+
+</ui:composition>
